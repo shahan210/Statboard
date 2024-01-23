@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.sidebar {
+  background-color: #20263a;
+  color: white;
+  /* width: 100%; */
+  /* height: 100%; */
 }
-
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  padding-top: 50px;
+  text-align: center;
+  margin-bottom: 150px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.menu {
+  display: block;
+  text-align: end;
+  margin-bottom: 67px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.menu-button {
+  padding: 10px 30px;
+  text-align: center;
+  width: 180px;
+  margin: 15px 0px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #1a1f30;
+  border: #1a1f30;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.menu-image {
+  text-align: center;
+  padding-right: 10px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.menu-button:hover {
+  background-color: #e8edff;
+  opacity: 0.8;
+  color: black;
+  transition: all ease-in-out 0.5s;
 }
-
-.card {
-  padding: 2em;
+.menu-button:active {
+  background-color: #e8edff;
+  opacity: 1;
+  color: black;
 }
-
-.read-the-docs {
-  color: #888;
+.active {
+  background-color: #e8edff;
+  opacity: 1;
+  color: black;
+}
+.logout {
+  padding: 0px 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  color: black;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.logout-button {
+  width: 100%;
+  border: 0;
+  background-color: white;
+  padding: 10px 0px;
 }
