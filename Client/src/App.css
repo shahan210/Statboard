@@ -34,8 +34,7 @@ body {
   padding-right: 10px;
 }
 .menu-button:hover {
-  background-color: #748dde;
-  opacity: 0.6;
+  background-color: #e8edff;
   color: black;
 }
 .menu-button:active {
@@ -81,7 +80,7 @@ body {
 }
 .card {
   background-color: white;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 20px;
   padding: 10px 15px;
   display: flex;
@@ -98,4 +97,76 @@ body {
 }
 .topbar-image {
   margin-left: 10px;
+}
+.container-graph {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgb(204, 203, 203);
+  height: 320px;
+  width: 830px;
+  display: flex;
+  justify-content: center;
+}
+.graph-item {
+  display: flex;
+  justify-content: center;
+}
+.container-pie {
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgb(204, 203, 203);
+}
+.pie-item {
+  height: 350px;
+  display: flex;
+  width: 350px;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 20px;
+  padding: 10px;
+  margin-right: 10px;
+  box-shadow: 0 4px 10px rgb(204, 203, 203);
+}
+
+table td,
+table th {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+tr:hover {
+  background-color: #f6f6f6;
+  transition: 0.3s;
+}
+.container-card {
+  margin-top: 15px;
+  background-color: white;
+  border-radius: 20px;
+  margin-right: 10px;
+  box-shadow: 0 4px 10px rgb(204, 203, 203);
+}
+.card-image {
+  width: 100%;
+}
+.details {
+  text-align: center;
+  line-height: 25px;
+}
+.socials {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 5px;
 }
