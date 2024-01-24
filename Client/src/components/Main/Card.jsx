@@ -3,7 +3,6 @@ import Profile from "../../UI/assets/media.png";
 import Insta from "../../UI/assets/instagram.png";
 import Twit from "../../UI/assets/twitter.png";
 import Face from "../../UI/assets/facebook.png";
-
 export default function Card() {
   return (
     <div className="col-sm-2">

@@ -19,31 +19,65 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false,
-      position: "right",
-    },
-    title: {
-      display: false,
-      text: "Chart.js Line Chart",
-    },
-  },
-};
-const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
-  datasets: [
-    {
-      label: "Dataset 1",
-      data: [3, 6, 9, 10],
-      borderColor: "rgb(255, 99, 132)",
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-    },
-  ],
-};
+import api from "../../API/Post";
+import { useEffect, useState } from "react";
+
 export default function Graph() {
+  const [loading, setLoading] = useState(true);
+  const [graphData, setGraphData] = useState({
+    xAxis: "",
+    yAxis: "",
+  });
+
+  useEffect(() => {
+    graphDetails();
+  }, []);
+
+  const graphDetails = async () => {
+    loading &&
+      (await api
+        .get("/api/graph")
+        .then((response) => {
+          // console.log(response);
+          setGraphData({
+            ...graphData,
+            xAxis: response.map((item) => item.x),
+            yAxis: response.map((item) => item.y),
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+          console.log("errorr");
+        })
+        .finally(() => {
+          setLoading(false);
+        }));
+  };
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: false,
+        position: "right",
+      },
+      title: {
+        display: false,
+        text: "Chart.js Line Chart",
+      },
+    },
+  };
+  const data = {
+    labels: graphData.xAxis.length > 0 && graphData.xAxis,
+    datasets: [
+      {
+        label: "Dataset 1",
+        data: graphData.yAxis.length > 0 && graphData.yAxis,
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
   return (
     <div className="row">
       <div className="col-sm-8">
