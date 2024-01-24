@@ -1,24 +1,28 @@
+import { useState } from "react";
 import "./App.css";
-import Graph from "./components/Main/Graph";
+import Index from "./components/Main";
 import SideBar from "./components/Sidebar/SideBar";
-import Table from "./components/Main/Table";
-import Topbar from "./components/Main/TopBar";
-
+import loader from "./UI/assets/Eclipse-1s-200px.gif";
 function App() {
-  return (
-    <>
-      <div className="row">
-        <div class="col-sm-2">
-          <SideBar />
-        </div>
-        <div class="col-sm-10">
-          <Topbar />
-          <Graph />
-          <Table />
-        </div>
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);
+  }, 200);
+  if (loading) {
+    return (
+      <div style={{ position: "absolute", top: "35%", right: "43%" }}>
+        <img style={{ width: 200, mixBlendMode: "darken" }} src={loader} />
       </div>
-    </>
-  );
+    );
+  } else {
+    return (
+      <>
+        <div className="row">
+          <SideBar />
+          <Index />
+        </div>
+      </>
+    );
+  }
 }
-
 export default App;

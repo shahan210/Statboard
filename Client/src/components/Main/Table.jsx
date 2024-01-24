@@ -1,34 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import api from "../../API/Post";
-
-export default function Table() {
-  const [loading, setLoading] = useState(true);
-  const [tableData, setTableData] = useState();
-
-  useEffect(() => {
-    tableDetails();
-  }, []);
-
-  const tableDetails = async () => {
-    loading &&
-      (await api
-        .get("/api/table")
-        .then((response) => {
-          // console.log(response);
-          setTableData(response);
-        })
-        .catch((err) => {
-          console.log(err);
-          console.log("errorr");
-        })
-        .finally(() => {
-          setLoading(false);
-        }));
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+export default function Table(props) {
+  const handleChange = (event, value) => {
+    localStorage.setItem("page", JSON.stringify(value));
   };
+  const pageNo = JSON.parse(localStorage.getItem("page"));
   return (
     <div className="row">
-      <div className="col-sm-10">
+      <div className="col-sm-10 table-box">
         <table>
           <thead>
             <tr>
@@ -39,9 +21,9 @@ export default function Table() {
             </tr>
           </thead>
           <tbody>
-            {tableData !== undefined &&
-              tableData.length > 0 &&
-              tableData.map((item) => {
+            {props.tableData !== undefined &&
+              props.tableData.length > 0 &&
+              props.tableData.map((item) => {
                 return (
                   <tr key={item.id}>
                     <td>{item.id}</td>
@@ -53,6 +35,16 @@ export default function Table() {
               })}
           </tbody>
         </table>
+        <div className="pagination">
+          <Stack>
+            <Pagination
+              onChange={handleChange}
+              defaultPage={pageNo}
+              count={5}
+              color="success"
+            />
+          </Stack>
+        </div>
       </div>
       <Card />
     </div>

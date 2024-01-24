@@ -5,11 +5,11 @@ import Twit from "../../UI/assets/twitter.png";
 import Face from "../../UI/assets/facebook.png";
 export default function Card() {
   return (
-    <div className="col-sm-2">
+    <div className="col-sm-2 card-box">
       <div className="container-card">
         <img src={Profile} alt="profile picture" className="card-image" />
         <div className="details">
-          <div style={{ fontWeight: "bold" }}>John Doe</div>
+          <div style={{ fontWeight: "bold" }}> John Doe</div>
           <div>CEO</div>
           <div>
             <img src={Insta} alt="" className="socials" />

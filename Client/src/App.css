@@ -4,12 +4,27 @@ body {
 }
 .sidebar {
   background-color: #20263a;
+  position: fixed;
   color: white;
+  width: 230px;
+  height: 210%;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.slide-open {
+  transition: 0.5s;
+  position: absolute;
+  color: white !important;
+  font-size: 30px !important;
+  top: 0;
+  left: 103px;
 }
 .logo {
   padding-top: 30px;
   text-align: center;
   margin-bottom: 80px;
+  transition: 0.3s;
 }
 .menu {
   display: block;
@@ -116,6 +131,7 @@ body {
   padding: 10px;
   margin-right: 10px;
   height: 320px;
+  width: 390px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,6 +174,8 @@ tr:hover {
 }
 .card-image {
   width: 100%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 }
 .details {
   text-align: center;
@@ -168,4 +186,232 @@ tr:hover {
   padding-bottom: 10px;
   padding-top: 5px;
   cursor: pointer;
+}
+.col-sm-8 {
+  width: 66.66667%;
+}
+.col-sm-4 {
+  width: 33.33333%;
+}
+.css-gmafwt-MuiButtonBase-root-MuiPaginationItem-root {
+  font-size: 1.5rem !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-content: center !important;
+  flex-wrap: wrap !important;
+}
+.hamburg {
+  display: none;
+  transition: 0.5s;
+  font-size: 40px;
+  color: #20263a;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+@media only screen and (max-width: 1440px) {
+  .sidebar {
+    width: 200px;
+  }
+  .container-pie {
+    width: 360px;
+  }
+  .container-graph {
+    width: 800px;
+  }
+  .menu-button {
+    width: 157px;
+  }
+  .menu {
+    margin-bottom: 170px;
+  }
+  .logo {
+    margin-bottom: 160px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .sidebar {
+    width: 130px;
+  }
+  .brief {
+    width: 40px;
+  }
+  .menu-button {
+    padding: 8px 0px;
+    width: 100px;
+    margin: 12px 0px;
+  }
+  .container-pie {
+    width: 100%;
+  }
+  .menu {
+    margin-bottom: 120px;
+  }
+  .container-graph {
+    width: 100%;
+    align-items: center;
+  }
+  .graph-item {
+    width: 100%;
+  }
+  .col-sm-8 {
+    width: 56.66667%;
+  }
+  .col-sm-4 {
+    width: 41.66667%;
+  }
+  .pie-item {
+    width: 320px;
+  }
+  .logo {
+    margin-bottom: 150px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .topBar {
+    margin-left: 100px;
+  }
+  .sidebar {
+    width: 0%;
+  }
+  .col-sm-2 {
+    width: 0px;
+  }
+  .logo,
+  .menu,
+  .logout {
+    display: none;
+  }
+  .hamburg {
+    display: block;
+    font-size: 40px;
+  }
+  .logo {
+    padding-top: 40px;
+    margin-bottom: 143px;
+  }
+  .graph-item {
+    width: 600px;
+    height: 300px;
+  }
+  .brief {
+    width: 50px;
+  }
+  .menu-button {
+    margin: 8px 0px;
+    width: 120px;
+  }
+  .menu {
+    margin-bottom: 140px;
+  }
+  .pie-item {
+    width: 800px;
+    height: 400px;
+  }
+  .col-sm-8 {
+    width: 100%;
+    margin-left: 50px;
+  }
+  .col-sm-4 {
+    margin-top: 20px;
+    width: 100%;
+    margin-left: 50px;
+  }
+  .container-graph {
+    width: 100%;
+  }
+  .table-box {
+    width: 100%;
+    margin-left: 50px;
+  }
+  .card-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-bottom: 5px;
+  }
+}
+@media only screen and (max-width: 426px) {
+  .topBar {
+    margin-left: 46px;
+  }
+  .graph-item {
+    width: 400px;
+    height: 200px;
+  }
+  .pie-item {
+    width: 400px;
+    height: 380px;
+  }
+  .card {
+    margin-left: 20px;
+  }
+  .col-sm-8,
+  .table-box,
+  .col-sm-4,
+  .card-box {
+    margin-left: 30px;
+    margin-right: 0;
+    padding: 0;
+    width: 90%;
+  }
+  .hamburg {
+    font-size: 30px;
+    margin: 10px;
+  }
+
+  .menu-button {
+    margin: 10px 0px;
+    width: 109px;
+    padding: 4px 0px;
+  }
+  .logo {
+    margin-bottom: 160px;
+  }
+  .menu {
+    margin-bottom: 150px;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .graph-item {
+    width: 350px;
+    height: 200px;
+  }
+  .pie-item {
+    width: 400px;
+    height: 350px;
+  }
+
+  .menu {
+    margin-bottom: 153px;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .graph-item {
+    width: 300px;
+    height: 200px;
+  }
+  .menu {
+    margin-bottom: 156px;
+  }
+  .card {
+    margin: 0;
+  }
+  p {
+    display: none;
+  }
+  .topbar-image {
+    margin: 0;
+  }
+  .menu-button {
+  }
+  .pie-item {
+    width: 400px;
+    height: 300px;
+  }
 }

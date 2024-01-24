@@ -4,37 +4,8 @@ import { Pie } from "react-chartjs-2";
 import api from "../../API/Post";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-export default function PieChart() {
+export default function PieChart(props) {
   const [loading, setLoading] = useState(true);
-  const [pieData, setPieData] = useState({
-    labels: "",
-    data: "",
-  });
-
-  useEffect(() => {
-    pieDetails();
-  }, []);
-  console.log(pieData);
-  const pieDetails = async () => {
-    loading &&
-      (await api
-        .get("/api/pie-chart")
-        .then((response) => {
-          console.log(response);
-          setPieData({
-            ...pieData,
-            labels: response.map((item) => item.label),
-            data: response.map((item) => item.value),
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-          console.log("errorr");
-        })
-        .finally(() => {
-          setLoading(false);
-        }));
-  };
 
   const options = {
     responsive: true,
@@ -46,11 +17,11 @@ export default function PieChart() {
     },
   };
   const data = {
-    labels: pieData.labels.length > 0 && pieData.labels,
+    labels: props.pieData.labels.length > 0 && props.pieData.labels,
     datasets: [
       {
         label: "# of Votes",
-        data: pieData.data.length > 0 && pieData.data,
+        data: props.pieData.data.length > 0 && props.pieData.data,
         backgroundColor: [
           "#67C587",
           "#88D1A1",

@@ -22,38 +22,7 @@ ChartJS.register(
 import api from "../../API/Post";
 import { useEffect, useState } from "react";
 
-export default function Graph() {
-  const [loading, setLoading] = useState(true);
-  const [graphData, setGraphData] = useState({
-    xAxis: "",
-    yAxis: "",
-  });
-
-  useEffect(() => {
-    graphDetails();
-  }, []);
-
-  const graphDetails = async () => {
-    loading &&
-      (await api
-        .get("/api/graph")
-        .then((response) => {
-          // console.log(response);
-          setGraphData({
-            ...graphData,
-            xAxis: response.map((item) => item.x),
-            yAxis: response.map((item) => item.y),
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-          console.log("errorr");
-        })
-        .finally(() => {
-          setLoading(false);
-        }));
-  };
-
+export default function Graph(props) {
   const options = {
     responsive: true,
     plugins: {
@@ -68,26 +37,24 @@ export default function Graph() {
     },
   };
   const data = {
-    labels: graphData.xAxis.length > 0 && graphData.xAxis,
+    labels: props.graphData.xAxis.length > 0 && props.graphData.xAxis,
     datasets: [
       {
         label: "Dataset 1",
-        data: graphData.yAxis.length > 0 && graphData.yAxis,
+        data: props.graphData.yAxis.length > 0 && props.graphData.yAxis,
         borderColor: "rgb(255, 99, 132)",
         backgroundColor: "rgba(255, 99, 132, 0.5)",
       },
     ],
   };
+
   return (
-    <div className="row">
-      <div className="col-sm-8">
-        <div className="container-graph">
-          <div className="graph-item">
-            <Line options={options} data={data} />
-          </div>
+    <div className="col-sm-8">
+      <div className="container-graph">
+        <div className="graph-item">
+          <Line options={options} data={data} />
         </div>
       </div>
-      <PieChart />
     </div>
   );
 }
