@@ -4,7 +4,7 @@ import Graph from "./components/Main/Graph";
 import PieChart from "./components/Main/PieChart";
 import SideBar from "./components/Sidebar/SideBar";
 import Table from "./components/Main/Table";
-import Topbar from "./components/Main/Topbar";
+import Topbar from "./components/Main/TopBar";
 
 function App() {
   return (

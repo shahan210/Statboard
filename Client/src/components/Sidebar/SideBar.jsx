@@ -29,7 +29,7 @@ export default function SideBar() {
           <img src={Plug} alt="Plugin" className="menu-image" />
           Plugins
         </button>
-        <br />  
+        <br />
         <button className="menu-button">
           <img src={Help} alt="Help" className="menu-image" />
           Help
@@ -37,8 +37,8 @@ export default function SideBar() {
       </div>
       <div className="logout">
         <button className="logout-button">
-          <img src={LogOut} alt="LogOut" className="menu-image" />
           Logout
+          <img src={LogOut} alt="LogOut" className="logout-image" />
         </button>
       </div>
     </div>
