@@ -1,20 +1,18 @@
 import React, { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Breif from "../../UI/assets/Briefcase.png";
 import Dash from "../../UI/assets/Circled menu.png";
+import Help from "../../UI/assets/Help.png";
+import LogOut from "../../UI/assets/Shutdown.png";
+import LogoName from "../../UI/assets/StatBoard.png";
 import Support from "../../UI/assets/Support.png";
 import Plug from "../../UI/assets/puzzle.png";
-import Help from "../../UI/assets/Help.png";
-import LogoName from "../../UI/assets/StatBoard.png";
-import LogOut from "../../UI/assets/Shutdown.png";
-import { GiHamburgerMenu } from "react-icons/gi";
 export default function SideBar() {
   const [slide, setSlide] = useState(false);
   const slideBar = () => {
     if (!slide) {
       setSlide(true);
       document.querySelector(".sidebar").style.width = "150px";
-      // document.querySelector(".col-sm-2").style.width = "16.66667%";
-
       var element = document.getElementById("slider");
       setTimeout(() => {
         element.classList.add("slide-open");
@@ -24,7 +22,6 @@ export default function SideBar() {
       }, 300);
     } else {
       document.querySelector(".sidebar").style.width = "0px";
-      // document.querySelector(".col-sm-2").style.width = "0px";
       document.querySelector(".logo").style.display = "none";
       document.querySelector(".menu").style.display = "none";
       document.querySelector(".logout").style.display = "none";

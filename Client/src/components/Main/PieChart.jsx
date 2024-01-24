@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { ArcElement, Chart as ChartJS, Legend, Tooltip } from "chart.js";
+import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
-import api from "../../API/Post";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 export default function PieChart(props) {
-  const [loading, setLoading] = useState(true);
-
   const options = {
     responsive: true,
     plugins: {

@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Card from "./Card";
-import api from "../../API/Post";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import React from "react";
+import Card from "./Card";
 export default function Table(props) {
   const handleChange = (event, value) => {
     localStorage.setItem("page", JSON.stringify(value));

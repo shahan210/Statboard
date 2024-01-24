@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "../../UI/assets/Rectangle 10.png";
 export default function Topbar() {
-  
   return (
     <div className="topBar">
       <div style={{ fontWeight: "bold" }}>Good Morning ! 🌞</div>

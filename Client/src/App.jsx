@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import loader from "./UI/assets/Eclipse-1s-200px.gif";
 import Index from "./components/Main";
 import SideBar from "./components/Sidebar/SideBar";
-import loader from "./UI/assets/Eclipse-1s-200px.gif";
 function App() {
   const [loading, setLoading] = useState(true);
   setTimeout(() => {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Topbar from "./TopBar";
-import Graph from "./Graph";
-import Table from "./Table";
 import api from "../../API/Post";
+import Graph from "./Graph";
 import PieChart from "./PieChart";
+import Table from "./Table";
+import Topbar from "./TopBar";
 export default function Index() {
   const [loading, setLoading] = useState({
     table: true,

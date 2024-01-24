@@ -1,13 +1,12 @@
-import PieChart from "./PieChart";
 import {
-  Chart as ChartJS,
   CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LineElement,
   LinearScale,
   PointElement,
-  LineElement,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
 ChartJS.register(
@@ -19,8 +18,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-import api from "../../API/Post";
-import { useEffect, useState } from "react";
 
 export default function Graph(props) {
   const options = {
